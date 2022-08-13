@@ -28,127 +28,130 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(15.0),
-        child: Column(
-          children: [
-            Expanded(
-              child: FutureBuilder(
-                  future: getPostApi(),
-                  builder: (context, snapshot) {
-                    if (snapshot.hasData) {
-                      return ListView.builder(
-                          itemCount: postList.length,
-                          itemBuilder: (context, index) {
-                            return Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(
-                                  height:
-                                      MediaQuery.of(context).size.height * .5,
-                                  child: CachedNetworkImage(
-                                    imageUrl:
-                                        "http://vodassets.s3-website-us-east-1.amazonaws.com/images/unscaled/2013/11/05/2-Days-In-Paris-1-VPA.jpg",
-                                    //postList[index]
-                                    //     .keyArtImages![index]
-                                    //     .url
-                                    //     .toString(),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: Column(
+            children: [
+              Expanded(
+                child: FutureBuilder(
+                    future: getPostApi(),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+                        return ListView.builder(
+                            itemCount: postList.length,
+                            itemBuilder: (context, index) {
+                              return Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    height:
+                                        MediaQuery.of(context).size.height * .5,
+                                    child: CachedNetworkImage(
+                                      imageUrl:
+                                          "http://vodassets.s3-website-us-east-1.amazonaws.com/images/unscaled/2013/11/05/2-Days-In-Paris-1-VPA.jpg",
+                                      //postList[index]
+                                      //     .keyArtImages![index]
+                                      //     .url
+                                      //     .toString(),
+                                    ),
                                   ),
-                                ),
-                                const SizedBox(
-                                  height: 20,
-                                ),
-                                RichTextWidget(
-                                    title: 'Title: ',
-                                    text: postList[index].headline.toString(),
-                                    textStyle: kFieldTextStyle),
-                                const SizedBox(
-                                  height: 20,
-                                ),
-                                RichTextWidget(
-                                    title: 'Genre: ',
-                                    text: postList[index].genres.toString(),
-                                    textStyle: kFieldTextStyle),
-                                const SizedBox(
-                                  height: 20,
-                                ),
-                                RichTextWidget(
-                                    title: 'Duration: ',
-                                    text: postList[index].duration.toString(),
-                                    textStyle: kFieldTextStyle),
-                                const SizedBox(
-                                  height: 20,
-                                ),
-                                RichTextWidget(
-                                    title: 'Cert: ',
-                                    text: postList[index].cert.toString(),
-                                    textStyle: kFieldTextStyle),
-                                const SizedBox(
-                                  height: 20,
-                                ),
-                                RichTextWidget(
-                                    title: 'Last Updateed: ',
-                                    text:
-                                        postList[index].lastUpdated.toString(),
-                                    textStyle: kFieldTextStyle),
-                                const SizedBox(
-                                  height: 20,
-                                ),
-                                RichTextWidget(
-                                    title: 'ID: ',
-                                    text: postList[index].id.toString(),
-                                    textStyle: kFieldTextStyle),
-                                const SizedBox(
-                                  height: 20,
-                                ),
-                                RichTextWidget(
-                                    title: 'Rating: ',
-                                    text: postList[index].rating.toString(),
-                                    textStyle: kFieldTextStyle),
-                                const SizedBox(
-                                  height: 20,
-                                ),
-                                RichTextWidget(
-                                    title: 'Quote: ',
-                                    text: postList[index].quote.toString(),
-                                    textStyle: kFieldTextStyle),
-                                const SizedBox(
-                                  height: 20,
-                                ),
-                                RichTextWidget(
-                                    title: 'Release Year: ',
-                                    text: postList[index].year.toString(),
-                                    textStyle: kFieldTextStyle),
-                                const SizedBox(
-                                  height: 20,
-                                ),
-                                RichTextWidget(
-                                    title: 'Synopsis: ',
-                                    text: postList[index].synopsis.toString(),
-                                    textStyle: kbodyTextStyle),
-                                const SizedBox(
-                                  height: 20,
-                                ),
-                                RichTextWidget(
-                                    title: 'Body: ',
-                                    text: postList[index].body.toString(),
-                                    textStyle: kbodyTextStyle),
-                                const SizedBox(
-                                  height: 20,
-                                ),
-                              ],
-                            );
-                          });
-                    } else {
-                      return const Center(
-                        child: CircularProgressIndicator(
-                          backgroundColor: Colors.purple,
-                        ),
-                      );
-                    }
-                  }),
-            ),
-          ],
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  RichTextWidget(
+                                      title: 'Title: ',
+                                      text: postList[index].headline.toString(),
+                                      textStyle: kFieldTextStyle),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  RichTextWidget(
+                                      title: 'Genre: ',
+                                      text: postList[index].genres.toString(),
+                                      textStyle: kFieldTextStyle),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  RichTextWidget(
+                                      title: 'Duration: ',
+                                      text: postList[index].duration.toString(),
+                                      textStyle: kFieldTextStyle),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  RichTextWidget(
+                                      title: 'Cert: ',
+                                      text: postList[index].cert.toString(),
+                                      textStyle: kFieldTextStyle),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  RichTextWidget(
+                                      title: 'Last Updateed: ',
+                                      text: postList[index]
+                                          .lastUpdated
+                                          .toString(),
+                                      textStyle: kFieldTextStyle),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  RichTextWidget(
+                                      title: 'ID: ',
+                                      text: postList[index].id.toString(),
+                                      textStyle: kFieldTextStyle),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  RichTextWidget(
+                                      title: 'Rating: ',
+                                      text: postList[index].rating.toString(),
+                                      textStyle: kFieldTextStyle),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  RichTextWidget(
+                                      title: 'Quote: ',
+                                      text: postList[index].quote.toString(),
+                                      textStyle: kFieldTextStyle),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  RichTextWidget(
+                                      title: 'Release Year: ',
+                                      text: postList[index].year.toString(),
+                                      textStyle: kFieldTextStyle),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  RichTextWidget(
+                                      title: 'Synopsis: ',
+                                      text: postList[index].synopsis.toString(),
+                                      textStyle: kbodyTextStyle),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  RichTextWidget(
+                                      title: 'Body: ',
+                                      text: postList[index].body.toString(),
+                                      textStyle: kbodyTextStyle),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                ],
+                              );
+                            });
+                      } else {
+                        return const Center(
+                          child: CircularProgressIndicator(
+                            backgroundColor: Colors.purple,
+                          ),
+                        );
+                      }
+                    }),
+              ),
+            ],
+          ),
         ),
       ),
     );
