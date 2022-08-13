@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 import 'package:movie_app/ui/constants.dart';
 import 'package:movie_app/ui/screens/home_screen/widgets/rich_text_widget.dart';
 
-import '../../models/get_post_model.dart';
+import '../../models/get_post_api.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
