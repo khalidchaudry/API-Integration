@@ -1,29 +1,29 @@
-class GetPostApi {
-   String? skyGoUrl;
-   String? url;
-   String? reviewAuthor;
-   String? id;
-   String? cert;
-   ViewingWindow? viewingWindow;
-   String? headline;
-   List<CardImages>? cardImages;
-   List<Directors>? directors;
-   String? sum;
-   List<KeyArtImages>? keyArtImages;
-   String? synopsis;
-   String? body;
-   List<Cast>? cast;
-   String? skyGoId;
-   String? year;
-   int? duration;
-   int? rating;
-   String? movieclass;
-   List<Videos>? videos;
-   String? lastUpdated;
-   List<String>? genres;
-   String? quote;
+class GetPostAPI {
+  String? skyGoUrl;
+  String? url;
+  String? reviewAuthor;
+  String? id;
+  String? cert;
+  ViewingWindow? viewingWindow;
+  String? headline;
+  List<CardImages>? cardImages;
+  List<Directors>? directors;
+  String? sum;
+  List<KeyArtImages>? keyArtImages;
+  String? synopsis;
+  String? body;
+  List<Cast>? cast;
+  String? skyGoId;
+  String? year;
+  int? duration;
+  int? rating;
+  String? movieclass;
+  List<Videos>? videos;
+  String? lastUpdated;
+  List<String>? genres;
+  String? quote;
 
-  GetPostApi(
+  GetPostAPI(
       {required this.skyGoUrl,
       required this.url,
       required this.reviewAuthor,
@@ -48,7 +48,7 @@ class GetPostApi {
       required this.genres,
       required this.quote});
 
-  GetPostApi.fromJson(Map<String, dynamic> json) {
+  GetPostAPI.fromJson(Map<String, dynamic> json) {
     if (json["skyGoUrl"] is String) {
       skyGoUrl = json["skyGoUrl"];
     }
@@ -169,10 +169,10 @@ class GetPostApi {
 }
 
 class Videos {
-   String? title;
-   List<Alternatives>? alternatives;
-   String? type;
-   String? url;
+  String? title;
+  List<Alternatives>? alternatives;
+  String? type;
+  String? url;
 
   Videos(
       {required this.title,
@@ -210,8 +210,8 @@ class Videos {
 }
 
 class Alternatives {
-   String? quality;
-   String? url;
+  String? quality;
+  String? url;
 
   Alternatives({required this.quality, required this.url});
 
@@ -233,7 +233,7 @@ class Alternatives {
 }
 
 class Cast {
-   String? name;
+  String? name;
 
   Cast({required this.name});
 
@@ -251,9 +251,9 @@ class Cast {
 }
 
 class KeyArtImages {
-   String? url;
-   int? h;
-   int? w;
+  String? url;
+  int? h;
+  int? w;
 
   KeyArtImages({required this.url, required this.h, required this.w});
 
@@ -279,7 +279,7 @@ class KeyArtImages {
 }
 
 class Directors {
-   String? name;
+  String? name;
 
   Directors({required this.name});
 
@@ -297,9 +297,9 @@ class Directors {
 }
 
 class CardImages {
-   String? url;
-   int? h;
-   int? w;
+  String? url;
+  int? h;
+  int? w;
 
   CardImages({required this.url, required this.h, required this.w});
 
@@ -325,9 +325,9 @@ class CardImages {
 }
 
 class ViewingWindow {
-   String? startDate;
-   String? wayToWatch;
-   String? endDate;
+  String? startDate;
+  String? wayToWatch;
+  String? endDate;
 
   ViewingWindow(
       {required this.startDate,

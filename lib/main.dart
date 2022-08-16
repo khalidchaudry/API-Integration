@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'ui/screens/home_screen/home_screen.dart';
+import 'package:movie_app/ui/screens/home_screen/home_screen.dart';
 
 main() {
   runApp(const MyApp());
@@ -12,7 +11,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'API',
       home: HomeScreen(),
